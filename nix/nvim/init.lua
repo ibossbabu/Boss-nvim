@@ -152,6 +152,6 @@ require("lze").load {
     end,
   },
 }
-vim.lsp.enable({ "gopls", "nil", "luals", "clangd" })
+vim.lsp.enable({ "gopls", "nil", "luals", "clangd", "ocaml" })
 vim.lsp.config("*", { root_markers = { ".git" }, })
 vim.cmd('colorscheme poimandres')

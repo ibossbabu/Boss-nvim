@@ -1,0 +1,211 @@
+# Pattern Matching & Options
+snippet some
+	Some ${0}
+snippet none
+	None
+snippet opt
+	match ${1} with
+	| Some ${2} -> ${3}
+	| None -> ${0}
+
+# Result type handling
+snippet ok
+	Ok ${0}
+snippet error
+	Error ${0}
+snippet result
+	match ${1} with
+	| Ok ${2} -> ${3}
+	| Error ${4} -> ${0}
+
+# List operations
+snippet []
+	[${0}]
+snippet ::
+	${1} :: ${0}
+snippet @
+	${1} @ ${0}
+snippet map
+	List.map ${1} ${0}
+snippet fold
+	List.fold_left ${1} ${2} ${0}
+snippet filter
+	List.filter ${1} ${0}
+
+# Record and variant types
+snippet record
+	type ${1} = {
+		${2}: ${3};
+		${0}
+	}
+snippet variant
+	type ${1} =
+		| ${2}
+		| ${0}
+snippet field
+	${1}: ${2};
+	${0}
+
+# Function patterns
+snippet lambda
+	fun ${1} -> ${0}
+snippet funmatch
+	function
+	| ${1} -> ${2}
+	| ${0}
+snippet partial
+	function
+	| ${1} -> ${0}
+
+# Control flow
+snippet while
+	while ${1} do
+		${0}
+	done
+snippet for
+	for ${1} = ${2} to ${3} do
+		${0}
+	done
+snippet fori
+	for ${1} = ${2} downto ${3} do
+		${0}
+	done
+
+# Exception handling
+snippet raise
+	raise (${1} ${0})
+snippet exception
+	exception ${1}${0}
+snippet failwith
+	failwith "${0}"
+snippet invalid
+	invalid_arg "${0}"
+
+# String operations
+snippet printf
+	Printf.printf "${1}" ${0}
+snippet sprintf
+	Printf.sprintf "${1}" ${0}
+snippet print
+	print_endline ${0}
+
+# Array operations
+snippet array
+	[|${0}|]
+snippet arraymake
+	Array.make ${1} ${0}
+snippet arrayget
+	${1}.(${2})${0}
+snippet arrayset
+	${1}.(${2}) <- ${0}
+
+# Reference operations
+snippet ref
+	ref ${0}
+snippet !
+	!${0}
+snippet :=
+	${1} := ${0}
+
+# Mutable record fields
+snippet mutable
+	mutable ${1}: ${2};
+	${0}
+
+# Common standard library
+snippet option
+	Option.${1} ${0}
+snippet list
+	List.${1} ${0}
+snippet string
+	String.${1} ${0}
+snippet filename
+	Filename.${1} ${0}
+
+# Testing patterns
+snippet assert
+	assert (${0})
+snippet test
+	let test_${1} () =
+		assert (${0})
+
+# Polymorphic variants
+snippet `
+	\`${1}${0}
+snippet poly
+	[ \`${1} | \`${0} ]
+
+# Object-oriented
+snippet class
+	class ${1} = object
+		${0}
+	end
+snippet method
+	method ${1} = ${0}
+snippet new
+	new ${0}
+
+# Functor patterns
+snippet functor
+	module ${1} (${2}: ${3}) = struct
+		${0}
+	end
+snippet include
+	include ${0}
+snippet open
+	open ${0}
+
+# Lwt (async) patterns
+snippet lwt
+	let%lwt ${1} = ${2} in
+	${0}
+snippet lwt_return
+	Lwt.return ${0}
+snippet lwt_bind
+	${1} >>= fun ${2} -> ${0}
+
+# Format module
+snippet format
+	Format.${1} ${0}
+snippet fmt
+	Format.fprintf ${1} "${2}" ${0}
+
+snippet doc
+	(** ${0} *)
+snippet comment
+	(* ${0} *)
+snippet let
+	let ${1} = ${2} in
+	${0}
+snippet fn
+	let ${1} =
+		${0}
+snippet fun
+	type ${1} = ${0}
+snippet mod
+	module ${1} = struct
+		${0}
+	end
+snippet modty
+	module type ${1} = sig
+		${0}
+	end
+snippet sw
+	match ${1} with
+	| ${2} -> ${0}
+snippet |
+	| ${1} -> ${0}
+snippet p
+	|> ${0}
+snippet if
+	if ${1} then
+		${2}
+	else
+		${0}
+snippet fnr
+	let rec ${1} =
+		${0}
+snippet try
+	try
+		${1}
+	with ${0}
