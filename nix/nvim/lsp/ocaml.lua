@@ -1,5 +1,5 @@
 return {
-  cmd = { 'ocaml-lsp-server' },
+  cmd = { 'ocamllsp' },
   filetypes = { 'ocaml', 'ocaml.menhir', 'ocaml.interface', 'reason', 'dune' },
   root_markers = {
     'dune-project',
