@@ -83,7 +83,7 @@
   extraPackages = with final; [
     # language servers
     lua-language-server
-    nixd
+    nil
     alejandra
   ];
 

@@ -8,6 +8,9 @@ return {
   },
   settings = {
     nix = {
+      flake = {
+        autoArchive = true,
+      },
       nixpkgs = {
         allowUnfree = true,
       },
