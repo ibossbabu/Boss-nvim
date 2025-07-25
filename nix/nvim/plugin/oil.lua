@@ -1,4 +1,4 @@
-vim.cmd.packadd 'oil-nvim'
+vim.cmd.packadd 'oil.nvim'
 require("oil").setup({
   default_file_explorer = true,
   keymaps = {
