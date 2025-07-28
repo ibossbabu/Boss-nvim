@@ -76,6 +76,7 @@
       (opt fzf-lua)
       (opt oil-nvim)
       (opt poimandres-nvim)
+      (opt vim-tmux-navigator)
 
       (opt conform-nvim)
       treesitter
