@@ -32,17 +32,3 @@ function OpenTerm()
 end
 
 vim.api.nvim_set_keymap('n', '<Leader>th', ':lua OpenTerm()<CR>', { noremap = true, silent = true })
-
--- Scroll down 1/4 of screen
-vim.keymap.set({ "n", "v", "x", "o" }, "<C-j>", function()
-  local win_height = vim.api.nvim_win_get_height(0)
-  local count = math.floor(win_height / 4)
-  vim.cmd("normal! " .. count .. "j")
-end, { desc = "Scroll down quarter page" })
-
--- Scroll up 1/4 of screen
-vim.keymap.set({ "n", "v", "x", "o" }, "<C-k>", function()
-  local win_height = vim.api.nvim_win_get_height(0)
-  local count = math.floor(win_height / 4)
-  vim.cmd("normal! " .. count .. "k")
-end, { desc = "Scroll up quarter page" })
