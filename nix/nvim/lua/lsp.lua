@@ -5,7 +5,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Lsp-native auto-formatting on save
     local c = vim.lsp.get_client_by_id(args.data.client_id)
     local opts = { buffer = args.buf, silent = true }
-    local supported_filetypes = { "lua", "go", "c", "cpp", "ocaml" }
+    local supported_filetypes = { "lua", "go", "c", "cpp", }
 
     if not c:supports_method('textDocument/willSaveWaitUntil')
         and c:supports_method('textDocument/formatting')

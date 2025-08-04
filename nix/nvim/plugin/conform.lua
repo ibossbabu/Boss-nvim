@@ -4,11 +4,11 @@ local conform = require("conform")
 conform.setup({
   formatters_by_ft = {
     nix = { "alejandra" },
-    ocaml = { "ocamlformat" },
+    c = { "clangformat" },
   },
   formatters = {
-    ocamlformat = {
-      command = "ocamlformat",
+    clangformat = {
+      command = "clangformat",
       prepend_args = { "--enable-outside-detected-project" },
     },
   },
