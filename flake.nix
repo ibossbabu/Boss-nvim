@@ -27,6 +27,10 @@
           overlays = [neovim-overlay];
         };
 
+        tmuxModule = import ./nix/tmux.nix {
+          inherit inputs pkgs;
+        };
+
         shell = pkgs.mkShellNoCC {
           name = "nvim-devShell";
           buildInputs = with pkgs; [
@@ -40,11 +44,19 @@
         packages = rec {
           default = nvim;
           nvim = pkgs.nvim-on-nix-sealed;
+          tmux = tmuxModule.package;
         };
         devShells.default = shell;
-        apps.default = {
-          type = "app";
-          program = "${pkgs.nvim-on-nix-sealed}/bin/nvim";
+        apps = {
+          default = {
+            type = "app";
+            program = "${pkgs.nvim-on-nix-sealed}/bin/nvim";
+          };
+          nvim = {
+            type = "app";
+            program = "${pkgs.nvim-on-nix-sealed}/bin/nvim";
+          };
+          tmux = tmuxModule.app;
         };
       }
     );
