@@ -54,8 +54,6 @@
             go
             lua
             nix
-            ocaml
-            ocaml_interface
           ]);
   in
     with vimPlugins; [
